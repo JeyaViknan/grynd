@@ -111,7 +111,7 @@ export function SignupForm() {
       <div className="text-center">
         <h2 className="text-3xl font-bold">Create an account</h2>
         <p className="text-gray-600 dark:text-gray-400 mt-2">
-          Join GrowStrong and start your fitness journey
+          Join GRYND and start your fitness journey
         </p>
       </div>
       
