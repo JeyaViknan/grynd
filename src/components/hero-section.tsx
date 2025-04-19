@@ -32,7 +32,7 @@ export function HeroSection() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Link to="#programs">
+              <Link to="/programs">
                 <Button className="gym-button-outline">
                   Explore Programs
                 </Button>
