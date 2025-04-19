@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Navbar } from "@/components/navbar";
 import { WorkoutTracker } from "@/components/dashboard/workout-tracker";
 import { ProgressChart } from "@/components/dashboard/progress-chart";
+import { BMICalculator } from "@/components/dashboard/bmi-calculator";
 import { Button } from "@/components/ui/button";
 import { Activity, Calendar, Dumbbell, Settings, Trophy, Users } from "lucide-react";
 import { AddExerciseDialog } from "@/components/dashboard/add-exercise-dialog";
@@ -117,6 +118,10 @@ const Dashboard = () => {
                   <Activity className="h-4 w-4 mr-2" />
                   Progress
                 </TabsTrigger>
+                <TabsTrigger value="fitness">
+                  <Activity className="h-4 w-4 mr-2" />
+                  Fitness Tools
+                </TabsTrigger>
               </TabsList>
               
               <TabsContent value="workout" className="space-y-6">
@@ -126,11 +131,6 @@ const Dashboard = () => {
               <TabsContent value="progress" className="space-y-6">
                 <ProgressChart />
               </TabsContent>
-              
-              <TabsTrigger value="fitness">
-                <Activity className="h-4 w-4 mr-2" />
-                Fitness Tools
-              </TabsTrigger>
               
               <TabsContent value="fitness" className="space-y-6">
                 <BMICalculator />
