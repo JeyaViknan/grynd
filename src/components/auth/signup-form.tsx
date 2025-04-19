@@ -54,7 +54,7 @@ export function SignupForm() {
       if (data.user) {
         toast({
           title: "Account created",
-          description: "Welcome to GrowStrong! Your fitness journey starts now.",
+          description: "Welcome to GRYND! Your fitness journey starts now.",
         });
         navigate("/dashboard");
       }
@@ -137,7 +137,7 @@ export function SignupForm() {
             <Input
               id="name"
               type="text"
-              placeholder="John Doe"
+              placeholder="Davin Laid"
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="pl-10 gym-input"
