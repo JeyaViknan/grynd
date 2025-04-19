@@ -23,7 +23,7 @@ export function HeroSection() {
               <span className="text-foreground dark:text-gray-100 font-bebas tracking-wider">ELEVATE YOUR MIND.</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto lg:mx-0">
-              Join GrowStrong and discover a personalized fitness journey with AI-driven workout plans, expert guidance, and a supportive community.
+              Join GRYND and discover a personalized fitness journey with AI-driven workout plans, expert guidance, and a supportive community.
             </p>
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
               <Link to="/auth?mode=signup">
