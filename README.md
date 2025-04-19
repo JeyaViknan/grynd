@@ -3,7 +3,7 @@
 A full-stack web application built with the **MERN (MongoDB, Express, React, Node.js)** stack, designed to help users track workouts, monitor strength gains, and visualize fitness progress over time.
 
 ## 🚀 Live Demo
-> [🔗 Visit the App](https://your-app-link.vercel.app) *(Replace with your deployed link)*
+> [🔗 Visit the App](grynd-three.vercel.app) 
 
 ---
 
@@ -39,5 +39,4 @@ A full-stack web application built with the **MERN (MongoDB, Express, React, Nod
 
 ---
 
-## 📁 Folder Structure (Simplified)
 
