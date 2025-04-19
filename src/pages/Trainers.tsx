@@ -35,7 +35,7 @@ const trainers = [
     experience: "12+ years",
     certifications: ["NSCA CSCS", "USA Powerlifting Coach", "Sports Nutrition"],
     rating: 4.9,
-    image: "https://images.unsplash.com/photo-1556557598-84d97035e37c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy3o4RoHqVaCglM7d48Zwde3d2AngV5PHnPw&s"
   }
 ];
 
