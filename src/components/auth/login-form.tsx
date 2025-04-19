@@ -33,7 +33,7 @@ export function LoginForm() {
       if (data.user) {
         toast({
           title: "Login successful",
-          description: "Welcome back to GrowStrong!",
+          description: "Welcome back to GRYND!",
         });
         navigate("/dashboard");
       }
@@ -53,7 +53,7 @@ export function LoginForm() {
       <div className="text-center">
         <h2 className="text-3xl font-bold">Welcome back</h2>
         <p className="text-gray-600 dark:text-gray-400 mt-2">
-          Login to your GrowStrong account
+          Login to your GRYND account
         </p>
       </div>
       
