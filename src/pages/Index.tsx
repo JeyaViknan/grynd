@@ -95,10 +95,10 @@ const Index = () => {
                 <Link to="/about" className="text-gray-600 hover:text-gym-primary dark:text-gray-400 dark:hover:text-gym-secondary">
                   About
                 </Link>
-                <Link to="/programs" className="text-gray-600 hover:text-gym-primary dark:text-gray-400 dark:hover:text-gym-secondary">
+                <Link to="/#features" className="text-gray-600 hover:text-gym-primary dark:text-gray-400 dark:hover:text-gym-secondary">
                   Features
                 </Link>
-                <Link to="/programs" className="text-gray-600 hover:text-gym-primary dark:text-gray-400 dark:hover:text-gym-secondary">
+                <Link to="/pricing" className="text-gray-600 hover:text-gym-primary dark:text-gray-400 dark:hover:text-gym-secondary">
                   Pricing
                 </Link>
                 <Link to="/contact" className="text-gray-600 hover:text-gym-primary dark:text-gray-400 dark:hover:text-gym-secondary">
