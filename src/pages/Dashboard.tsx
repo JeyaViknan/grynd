@@ -13,30 +13,6 @@ import { useEffect } from "react";
 
 const Dashboard = () => {
   const { user, loading, signOut } = useUser();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!loading && !user) {
-      navigate('/auth?mode=login');
-    }
-  }, [user, loading, navigate]);
-
-  // Show loading state while checking authentication
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
-        <div className="text-center">
-          <h2 className="text-xl font-medium mb-2">Loading...</h2>
-          <p className="text-gray-500 dark:text-gray-400">Please wait while we prepare your dashboard</p>
-        </div>
-      </div>
-    );
-  }
-
-  // If not authenticated after loading, don't render dashboard content
-  if (!user) {
-    return null;
-  }
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -47,15 +23,27 @@ const Dashboard = () => {
           {/* Sidebar */}
           <div className="md:w-64 shrink-0">
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4 sticky top-24">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-12 w-12 rounded-full bg-gym-primary/10 dark:bg-gym-primary/20 flex items-center justify-center">
-                  <Users className="h-6 w-6 text-gym-primary dark:text-gym-secondary" />
+              {user ? (
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-12 w-12 rounded-full bg-gym-primary/10 dark:bg-gym-primary/20 flex items-center justify-center">
+                    <Users className="h-6 w-6 text-gym-primary dark:text-gym-secondary" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium">{user.email}</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Premium Member</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-medium">{user.email}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Premium Member</p>
+              ) : (
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-12 w-12 rounded-full bg-gym-primary/10 dark:bg-gym-primary/20 flex items-center justify-center">
+                    <Users className="h-6 w-6 text-gym-primary dark:text-gym-secondary" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium">Guest User</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Limited Access</p>
+                  </div>
                 </div>
-              </div>
+              )}
               
               <nav className="space-y-1">
                 <Button variant="ghost" className="w-full justify-start gap-3" asChild>
@@ -94,13 +82,23 @@ const Dashboard = () => {
                 <div className="bg-gym-primary/10 dark:bg-gym-primary/20 rounded-lg p-4 mb-4">
                   <AiCoachDialog />
                 </div>
-                <Button 
-                  variant="outline" 
-                  className="w-full justify-center" 
-                  onClick={signOut}
-                >
-                  Sign Out
-                </Button>
+                {user ? (
+                  <Button 
+                    variant="outline" 
+                    className="w-full justify-center" 
+                    onClick={signOut}
+                  >
+                    Sign Out
+                  </Button>
+                ) : (
+                  <Button 
+                    variant="outline" 
+                    className="w-full justify-center" 
+                    onClick={() => navigate('/auth?mode=login')}
+                  >
+                    Sign In
+                  </Button>
+                )}
               </div>
             </div>
           </div>
@@ -110,7 +108,7 @@ const Dashboard = () => {
             <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
             
             <Tabs defaultValue="workout" className="w-full space-y-8">
-              <TabsList className="grid w-full grid-cols-2">
+              <TabsList className="grid w-full grid-cols-3">
                 <TabsTrigger value="workout">
                   <Dumbbell className="h-4 w-4 mr-2" />
                   Workout Tracker
@@ -127,6 +125,15 @@ const Dashboard = () => {
               
               <TabsContent value="progress" className="space-y-6">
                 <ProgressChart />
+              </TabsContent>
+              
+              <TabsTrigger value="fitness">
+                <Activity className="h-4 w-4 mr-2" />
+                Fitness Tools
+              </TabsTrigger>
+              
+              <TabsContent value="fitness" className="space-y-6">
+                <BMICalculator />
               </TabsContent>
             </Tabs>
             
