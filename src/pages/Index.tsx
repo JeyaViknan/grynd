@@ -107,7 +107,7 @@ const Index = () => {
               </div>
             </div>
             <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800 text-center text-gray-600 dark:text-gray-400 text-sm">
-              &copy; {new Date().getFullYear()} GrowStrong. All rights reserved.
+              &copy; {new Date().getFullYear()} GRYND. All rights reserved.
             </div>
           </div>
         </footer>
